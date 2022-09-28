@@ -129,7 +129,7 @@ $('document').ready(function() {
 
     // Перемешивания пазлов при нажатии на кнопку "Перемешать" \ Shuffle puzzles by pressing the "Shuffle" button
     $(mixBtn).click(function() {
-        mix();
+        location.reload();
     });
 });
 
