@@ -16,7 +16,6 @@ window.addEventListener('DOMContentLoaded', () => {
         if(index !== 0){
             $(this).click(function() {
                 const currentEl = $(this);
-                // Найти координаты кликнутой ячейки \ Find the coordinates of the clicked cell
                 function findCurrentCoord() {
                     timeCurrent = currentEl.offset({
                         top: currentEl.top,
@@ -26,10 +25,6 @@ window.addEventListener('DOMContentLoaded', () => {
                     return timeCurrent.position();
                 };
                 findCurrentCoord();
-
-                // Запись координат во временные переменные \ Writing coordinates to temporary variables
-                CurrTop = currentEl.offset().top;
-                CurrLeft = currentEl.offset().left;
                 
                 if ((timeCurrent.position().left - 100) === timeZero.position().left) {
                     $(puzzlesArray[0]).insertAfter(currentEl);
