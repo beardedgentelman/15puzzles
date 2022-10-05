@@ -48,7 +48,7 @@ $('document').ready(function() {
                 else if ((timeCurrent.position().top - 100) == timeZero.position().top && timeCurrent.position().left == timeZero.position().left){
                     $(currentEl).insertBefore(arrayPuzzle[15]);
                     $(arrayPuzzle[15]).insertBefore(nextCurrEl);
-                    if (nextCurrEl.length == 0) {
+                    if (nextCurrEl.length == 0) { // Когда пазл последний \ When the puzzle is the last
                         $(currentEl).insertBefore(arrayPuzzle[15]);
                         $(arrayPuzzle[15]).insertAfter(prevCurrEl);
                     }
@@ -66,13 +66,11 @@ $('document').ready(function() {
                         alert('Вiтаю, Ви перемогли!');
                     }, 50);
                 }
-
-                console.log(timeCurrent.position().left, timeZero.position().left, timeCurrent.position().top - 100, timeZero.position().top);
             });
         }
     });
     
-
+    // Перемешивания пазлов / Puzzles shuffling
     function mix() {
         $(puzzleArea).append(arrayPuzzle.map(i => [Math.floor(Math.random() * 201), i]).sort().map(i => i[1]));
     };
